@@ -26,7 +26,7 @@ const EditTrip = () => {
   // Fetch existing data
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/api/trips/${id}`)
+      .get(`be-tugas-production.up.railway.app/api/trips/${id}`)
       .then((res) => {
         const t = res.data.data;
         // parse duration "6D/4N" → day, night
