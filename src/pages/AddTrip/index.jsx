@@ -39,7 +39,7 @@ const AddTrip = () => {
     };
 
     try {
-      await axios.post("be-tugas-production.up.railway.app/api/trips", payload);
+      await axios.post("https://be-tugas-production.up.railway.app/api/trips", payload);
       alert("Trip added successfully");
       navigate("/");
     } catch (err) {

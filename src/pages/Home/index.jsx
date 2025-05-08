@@ -8,7 +8,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("be-tugas-production.up.railway.app/api/trips")
+      .get("https://be-tugas-production.up.railway.app/api/trips")
       .then((res) => setTrips(res.data.data))
       .catch((err) => console.error("Error fetching trips:", err));
   }, []);

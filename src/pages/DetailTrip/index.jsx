@@ -20,7 +20,7 @@ const TripDetail = () => {
 
   useEffect(() => {
     axios
-      .get(`be-tugas-production.up.railway.app/api/trips/${id}`)
+      .get(`https://be-tugas-production.up.railway.app/api/trips/${id}`)
       .then((res) => {
         setTrip(res.data.data);
         setLoading(false);

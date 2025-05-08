@@ -26,11 +26,13 @@ const EditTrip = () => {
   // Fetch existing data
   useEffect(() => {
     axios
-      .get(`be-tugas-production.up.railway.app/api/trips/${id}`)
+      .get(`https://be-tugas-production.up.railway.app/api/trips/${id}`)
       .then((res) => {
         const t = res.data.data;
         // parse duration "6D/4N" → day, night
-        const [day, night] = t.duration.split("/").map((s) => s.replace(/[^\d]/g, ""));
+        const [day, night] = t.duration
+          .split("/")
+          .map((s) => s.replace(/[^\d]/g, ""));
         setForm({
           title: t.title,
           country: t.location,
@@ -126,7 +128,9 @@ const EditTrip = () => {
 
           {/* Accommodation */}
           <div>
-            <label className="block text-sm font-medium mb-1">Accommodation</label>
+            <label className="block text-sm font-medium mb-1">
+              Accommodation
+            </label>
             <input
               name="accommodation"
               value={form.accommodation}
@@ -137,7 +141,9 @@ const EditTrip = () => {
 
           {/* Transportation */}
           <div>
-            <label className="block text-sm font-medium mb-1">Transportation</label>
+            <label className="block text-sm font-medium mb-1">
+              Transportation
+            </label>
             <input
               name="transportation"
               value={form.transportation}
@@ -223,7 +229,9 @@ const EditTrip = () => {
 
           {/* Description */}
           <div>
-            <label className="block text-sm font-medium mb-1">Description</label>
+            <label className="block text-sm font-medium mb-1">
+              Description
+            </label>
             <textarea
               name="description"
               rows={4}
